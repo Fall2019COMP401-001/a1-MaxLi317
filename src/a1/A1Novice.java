@@ -21,7 +21,7 @@ public class A1Novice {
 				double g = scan.nextDouble();
 				d = d + h * g;		
 			}
-			System.out.println(z + d);
+			System.out.println(z+String.format("%.2f", d));
 			
 		}
 		scan.close();
