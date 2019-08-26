@@ -12,7 +12,7 @@ public class A1Novice {
 		Double c=scan.nextDouble();
 		for (int i = 0; i<c; i ++) {
 			String x = scan.next();
-			String z = x.substring(0,1) + "." + scan.next()+": ";
+			String z = x.substring(0,1) + ". " + scan.next()+": ";
 			int y = scan.nextInt();
 			double d = 0;
 			for (int j=0; j<y; j++) {
