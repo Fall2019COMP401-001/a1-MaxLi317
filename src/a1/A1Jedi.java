@@ -12,6 +12,7 @@ public class A1Jedi {
 		int goodsnumber = scan.nextInt();
 		String[]names = new String[goodsnumber];
 		Double[]prices = new Double[goodsnumber];
+		boolean[]hasbought = new boolean[goodsnumber];
 		int[]goodsindex = new int[goodsnumber];
 		int[] howmanybuyit = new int[goodsnumber];
 		for (int i=0;i<goodsnumber;i++) {
@@ -23,23 +24,31 @@ public class A1Jedi {
 		for (int i=0; i<customernumber; i++) {
 			scan.next();
 			scan.next();
+			for (int f=0;f<goodsnumber;f++) {
+				hasbought[f] = false;
+			}
 			int listnumber = scan.nextInt();
 			for (int b=0; b < listnumber; b++) {
 				int quantity = scan.nextInt();//dismatch
 			    String namevariable = scan.next();
-				for (int a=0; a< names.length; a++) {
+				for (int a=0; a< names.length; a++) { 
 					if (names[a].equals (namevariable)) {
-						goodsindex [a]+= quantity;
-						howmanybuyit [a]+=1;
-					}
-				
-				}
-			}
+						if (hasbought [a] == false) {
+							hasbought[a] = true;
+							goodsindex [a]+= quantity;
+							howmanybuyit [a]+=1;
+						   
+					} else {
+						goodsindex [a]+= quantity; 
 		
+				     }
+			        }
+		         }
+		     }
 		}
 		for (int i=0; i<goodsnumber; i++) {
 			if (howmanybuyit[i]== 0) {
-				System.out.println ("No customer bought " + names[i]);
+				System.out.println ("No customers bought " + names[i]);
 				
 			} else {
 				System.out.println (howmanybuyit[i] + " customers bought " + goodsindex[i] + " " + names[i] );
