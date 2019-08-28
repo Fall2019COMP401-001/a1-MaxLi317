@@ -29,8 +29,8 @@ public class A1Jedi {
 			    String namevariable = scan.next();
 				for (int a=0; a< names.length; a++) {
 					if (names[a].equals (namevariable)) {
-						goodsindex [a] = +quantity;
-						howmanybuyit [a]= + 1;
+						goodsindex [a]+= quantity;
+						howmanybuyit [a]+=1;
 					}
 				
 				}
