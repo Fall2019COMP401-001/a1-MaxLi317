@@ -47,9 +47,9 @@ public class A1Adept {
 			}
 		
 		 }
-		System.out.println ("Biggest: " + rich + " " + Biggest);
-		System.out.println ("Smallest: " + poor + " "+ Smallest);
-		System.out.println ("Average: " + total/numberofcost);
+		System.out.println ("Biggest: " + rich + " " + "(" + Biggest + ")");
+		System.out.println ("Smallest: " + poor + " "+ "(" + Smallest + ")");
+		System.out.println ("Average: " + String.format("%.2f", total/numberofcost ));
 		scan.close();
 	}
 }

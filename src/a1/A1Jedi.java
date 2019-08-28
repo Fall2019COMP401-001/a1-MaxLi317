@@ -39,11 +39,12 @@ public class A1Jedi {
 		}
 		for (int i=0; i<goodsnumber; i++) {
 			if (howmanybuyit[i]== 0) {
-				System.out.println ("No customer bought" + names[i]);
+				System.out.println ("No customer bought " + names[i]);
 				
-			}
-			System.out.println (howmanybuyit[i] + " customers bought " + goodsindex[i] + " " + names[i] );
-		}
+			} else {
+				System.out.println (howmanybuyit[i] + " customers bought " + goodsindex[i] + " " + names[i] );
+			   }
 		scan.close();
+		}
 }
 }
