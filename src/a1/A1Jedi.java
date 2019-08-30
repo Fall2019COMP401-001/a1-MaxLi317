@@ -9,50 +9,70 @@ public class A1Jedi {
 		Scanner scan = new Scanner(System.in);
 
 		// Your code follows here.
-		int goodsnumber = scan.nextInt();
-		String[]names = new String[goodsnumber];
-		Double[]prices = new Double[goodsnumber];
-		boolean[]hasbought = new boolean[goodsnumber];
-		int[]goodsindex = new int[goodsnumber];
-		int[] howmanybuyit = new int[goodsnumber];
-		for (int i=0;i<goodsnumber;i++) {
+		/*
+		 * Scan the grocery name and price into the array
+		 * Also for jump into the people part
+		 */
+		int goodsNumber = scan.nextInt();
+		String[] names = new String[goodsNumber];
+		Double[] prices = new Double[goodsNumber];
+		boolean[] hasBought = new boolean[goodsNumber];
+		int[] goodsIndex = new int[goodsNumber];
+		int[] howManyBuyIt = new int[goodsNumber];
+		
+		for (int i=0;i<goodsNumber;i++) {
 			names[i] = scan.next();
 			prices[i] = scan.nextDouble();
-			goodsindex[i] = 0;
+			goodsIndex[i] = 0;
 		}
-		int customernumber = scan.nextInt();
-		for (int i=0; i<customernumber; i++) {
-			scan.next();
-			scan.next();
-			for (int f=0;f<goodsnumber;f++) {
-				hasbought[f] = false;
-			}
-			int listnumber = scan.nextInt();
-			for (int b=0; b < listnumber; b++) {
-				int quantity = scan.nextInt();//dismatch
-			    String namevariable = scan.next();
-				for (int a=0; a< names.length; a++) { 
-					if (names[a].equals (namevariable)) {
-						if (hasbought [a] == false) {
-							hasbought[a] = true;
-							goodsindex [a]+= quantity;
-							howmanybuyit [a]+=1;
-						   
-					} else {
-						goodsindex [a]+= quantity; 
 		
-				     }
+		int customerNumber = scan.nextInt();
+		
+		for (int i=0; i<customerNumber; i++) {
+			scan.next();
+			scan.next();
+			for (int f=0;f<goodsNumber;f++) {
+				hasBought[f] = false;
+			}
+			
+			int listnumber = scan.nextInt();
+			
+			/*
+			 * Check the name, boolean [i] changes to true when names match
+			 * Add people number and quantity name to related array
+			 */
+			for (int b=0; b < listnumber; b++) {
+				
+				int quantity = scan.nextInt();
+			    String nameVariable = scan.next();
+			    
+				for (int a=0; a< names.length; a++) { 
+					
+					if (names[a].equals (nameVariable)) {
+						
+						if (hasBought [a] == false) {
+							hasBought[a] = true;
+							goodsIndex [a]+= quantity;
+							howManyBuyIt [a]+=1;
+					     } else {
+						
+					    	 goodsIndex [a]+= quantity; 
+		
+				         }
 			        }
 		         }
 		     }
 		}
-		for (int i=0; i<goodsnumber; i++) {
-			if (howmanybuyit[i]== 0) {
+		for (int i=0; i<goodsNumber; i++) {
+			if (howManyBuyIt[i]== 0) {
+				
 				System.out.println ("No customers bought " + names[i]);
 				
 			} else {
-				System.out.println (howmanybuyit[i] + " customers bought " + goodsindex[i] + " " + names[i] );
-			   }
+				
+				System.out.println (howManyBuyIt[i] + " customers bought " + goodsIndex[i] + " " + names[i] );
+			}
+			
 		scan.close();
 		}
 }

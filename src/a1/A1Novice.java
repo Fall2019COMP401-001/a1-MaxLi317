@@ -10,18 +10,23 @@ public class A1Novice {
 
 		// Your code follows here.
 		Double c=scan.nextDouble();
-		for (int i = 0; i<c; i ++) {
-			String x = scan.next();
-			String z = x.substring(0,1) + ". " + scan.next()+": ";
+		for (int i = 0; i<c; i ++) { 
+			
+			String name = scan.next(); 
+			String wholeName = name.substring(0,1) + ". " + scan.next()+": ";
 			int y = scan.nextInt();
-			double d = 0;
+			double totalPrice = 0;
+			/*
+			 * use the scan to get quantity and price
+			 * the result is total price and it is formatted in 2 decimals 
+			 */
 			for (int j=0; j<y; j++) {
-				int h = scan.nextInt();
-				x = scan.next();
-				double g = scan.nextDouble();
-				d = d + h * g;		
+				int quantity = scan.nextInt(); 
+				name = scan.next();
+				double price = scan.nextDouble();
+				totalPrice = totalPrice + quantity * price;		
 			}
-			System.out.println(z+String.format("%.2f", d));
+			System.out.println(wholeName+String.format("%.2f", totalPrice));
 			
 		}
 		scan.close();
